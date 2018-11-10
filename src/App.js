@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.scss";
 
 function App() {
   // Declare a new state variable, which we'll call "count"
