@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import QuizContainer from "./components/QuizContainer";
 import "./App.scss";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
 
   return (
     <div>
+      <QuizContainer />
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>

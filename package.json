@@ -6,7 +6,9 @@
     "node-sass": "^4.10.0",
     "react": "^16.7.0-alpha",
     "react-dom": "^16.7.0-alpha",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "react-slick": "^0.23.2",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
