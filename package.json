@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "node-sass": "^4.10.0",
+    "purecss": "^1.0.0",
     "react": "^16.7.0-alpha",
     "react-dom": "^16.7.0-alpha",
     "react-scripts": "2.1.1",

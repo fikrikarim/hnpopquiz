@@ -5,15 +5,26 @@ class SimpleSlider extends React.Component {
   render() {
     var settings = {
       dots: true,
-      infinite: true,
       speed: 500,
+      infinite: false,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      arrows: false
     };
     return (
       <Slider {...settings}>
         <div>
-          <h3>1</h3>
+          <div className="pure-g">
+            <div className="pure-u-1-3">
+              <p>Thirds</p>
+            </div>
+            <div className="pure-u-1-3">
+              <p>Thirds</p>
+            </div>
+            <div className="pure-u-1-3">
+              <p>Thirds</p>
+            </div>
+          </div>
         </div>
         <div>
           <h3>2</h3>

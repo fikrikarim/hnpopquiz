@@ -1,6 +1,22 @@
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+html,
+body,
+#root,
+#root > div {
+  height: 100%;
+}
 
-p {
-  color: red;
+.slick {
+  &-slider {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-list {
+    flex-grow: 1;
+  }
+
+  &-dots {
+    bottom: 0;
+    position: relative;
+  }
 }
