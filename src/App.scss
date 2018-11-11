@@ -32,7 +32,8 @@ body,
   align-items: center;
   justify-content: center;
 
-  &-landing {
+  &-landing,
+  &-submit_answer {
     text-align: center;
   }
 }

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "question": "Hacker news is a link aggregator site for hackers created by?",
     "choices": [
       "Paul Ryan",
@@ -12,24 +13,28 @@
     "explanation": ""
   },
   {
+    "id": 2,
     "question": "What company did Show HN on Hacker news, but got some pessimistic comments, including, \"you can already build such a system yourself quite trivially\"?",
     "choices": ["Airbnb", "Box", "Coinbase", "Dropbox", "Firebase"],
     "correctChoice": "Dropbox",
     "explanation": "https://news.ycombinator.com/item?id=8863"
   },
   {
+    "id": 3,
     "question": "How many karma you need to be able to downvote other comments?",
     "choices": ["1", "31", "251", "501", "You can downvote comments?"],
     "correctChoice": "501",
     "explanation": "https://github.com/minimaxir/hacker-news-undocumented#downvoting-comments"
   },
   {
+    "id": 4,
     "question": "What is the username of one (or more) of our moderator(s)?",
     "choices": ["dang", "ding", "spez", "momod", "All of the above"],
     "correctChoice": "dang",
     "explanation": ""
   },
   {
+    "id": 5,
     "question": "Which computer scientist did an AMA (ask me anything) on HN?",
     "choices": [
       "Alan Kay",
@@ -42,12 +47,14 @@
     "explanation": "https://news.ycombinator.com/item?id=11939851"
   },
   {
+    "id": 6,
     "question": "Which of the following username isn't included in top 5 users with most karma?",
     "choices": ["tptacek", "jacquesm", "patio11", "danso", "sctb"],
     "correctChoice": "sctb",
     "explanation": "https://news.ycombinator.com/leaders"
   },
   {
+    "id": 7,
     "question": "What site releases a satirical weekly annotated digest of the top HN posts?",
     "choices": [
       "negationreview",
@@ -60,12 +67,14 @@
     "explanation": "http://n-gate.com/"
   },
   {
+    "id": 8,
     "question": "The original hacker news program is written in what programming language?",
     "choices": ["Arc", "Basic", "Clojure", "Delphi", "Typescript"],
     "correctChoice": "Arc",
     "explanation": "http://paulgraham.com/hackernews.html"
   },
   {
+    "id": 9,
     "question": "At the moment, what's the title of HN submission with highest point?",
     "choices": [
       "A Message to Our Customers",
@@ -78,6 +87,7 @@
     "explanation": "I really hope I can update this answer"
   },
   {
+    "id": 10,
     "question": "What is the \"comeback of all time\" according to pg?",
     "choices": [
       "\"Did you create the company by yourself?\"",
