@@ -4,6 +4,7 @@ import SlideLanding from "./SlideLanding";
 import SlideScore from "./SlideScore";
 import SlideQuestion from "./SlideQuestion";
 import SlideSubmitAnswer from "./SlideSubmitAnswer";
+import SlideLast from "./SlideLast";
 import PageLoading from "./PageLoading";
 import quizList from "../quizList.json";
 
@@ -64,11 +65,27 @@ function QuizContainer() {
         <SlideLanding onClick={nextSlide} />
       )}
 
-      {quizList.map(quiz => (
-        <SlideQuestion quiz={quiz} key={quiz.id} selectAnswer={selectAnswer} />
-      ))}
+      {isAnswersSubmitted
+        ? quizList.map(quiz => (
+            <SlideQuestion
+              quiz={quiz}
+              key={quiz.id}
+              selectAnswer={selectAnswer}
+            />
+          ))
+        : quizList.map(quiz => (
+            <SlideQuestion
+              quiz={quiz}
+              key={quiz.id}
+              selectAnswer={selectAnswer}
+            />
+          ))}
 
-      <SlideSubmitAnswer onClick={submitAnswer} />
+      {isAnswersSubmitted ? (
+        <SlideLast />
+      ) : (
+        <SlideSubmitAnswer onClick={submitAnswer} />
+      )}
     </Slider>
   );
 }

@@ -8,6 +8,8 @@ export default function SlideLanding(props) {
       <h2>{score} / 10</h2>
 
       <button onClick={onClick}>Show Answers</button>
+      <br />
+      <button onClick={() => console.log("try again")}>Try again</button>
     </div>
   );
 }
