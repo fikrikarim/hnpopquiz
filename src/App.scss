@@ -11,12 +11,28 @@ body,
     flex-direction: column;
   }
 
-  &-list {
+  &-list,
+  &-track,
+  &-slide,
+  &-slide > div {
+    display: flex !important;
     flex-grow: 1;
   }
 
   &-dots {
     bottom: 0;
     position: relative;
+  }
+}
+
+.slide {
+  display: flex !important;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+
+  &-landing {
+    text-align: center;
   }
 }

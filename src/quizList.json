@@ -1,0 +1,92 @@
+[
+  {
+    "question": "Hacker news is a link aggregator site for hackers created by?",
+    "choices": [
+      "Paul Ryan",
+      "Paul Allen",
+      "Paul Graham",
+      "Paul Walker",
+      "Chris Paul"
+    ],
+    "correctChoice": "Paul Graham",
+    "explanation": ""
+  },
+  {
+    "question": "What company did Show HN on Hacker news, but got some pessimistic comments, including, \"you can already build such a system yourself quite trivially\"?",
+    "choices": ["Airbnb", "Box", "Coinbase", "Dropbox", "Firebase"],
+    "correctChoice": "Dropbox",
+    "explanation": "https://news.ycombinator.com/item?id=8863"
+  },
+  {
+    "question": "How many karma you need to be able to downvote other comments?",
+    "choices": ["1", "31", "251", "501", "You can downvote comments?"],
+    "correctChoice": "501",
+    "explanation": "https://github.com/minimaxir/hacker-news-undocumented#downvoting-comments"
+  },
+  {
+    "question": "What is the username of one (or more) of our moderator(s)?",
+    "choices": ["dang", "ding", "spez", "momod", "All of the above"],
+    "correctChoice": "dang",
+    "explanation": ""
+  },
+  {
+    "question": "Which computer scientist did an AMA (ask me anything) on HN?",
+    "choices": [
+      "Alan Kay",
+      "Bjarne Stroustrup",
+      "Claude Shannon",
+      "Donald Knuth",
+      "None of the above"
+    ],
+    "correctChoice": "Alan Kay",
+    "explanation": "https://news.ycombinator.com/item?id=11939851"
+  },
+  {
+    "question": "Which of the following username isn't included in top 5 users with most karma?",
+    "choices": ["tptacek", "jacquesm", "patio11", "danso", "sctb"],
+    "correctChoice": "sctb",
+    "explanation": "https://news.ycombinator.com/leaders"
+  },
+  {
+    "question": "What site releases a satirical weekly annotated digest of the top HN posts?",
+    "choices": [
+      "negationreview",
+      "weeklydisjunction",
+      "nvm",
+      "n-gate",
+      "daringfireball"
+    ],
+    "correctChoice": "n-gate",
+    "explanation": "http://n-gate.com/"
+  },
+  {
+    "question": "The original hacker news program is written in what programming language?",
+    "choices": ["Arc", "Basic", "Clojure", "Delphi", "Typescript"],
+    "correctChoice": "Arc",
+    "explanation": "http://paulgraham.com/hackernews.html"
+  },
+  {
+    "question": "At the moment, what's the title of HN submission with highest point?",
+    "choices": [
+      "A Message to Our Customers",
+      "Steve Jobs has passed away.",
+      "Stephen Hawking has died",
+      "Reflecting on one very, very strange year at Uber",
+      "Show HN: HN Pop Quiz - How much do you know about HN?"
+    ],
+    "correctChoice": "Stephen Hawking has died",
+    "explanation": "I really hope I can update this answer"
+  },
+  {
+    "question": "What is the \"comeback of all time\" according to pg?",
+    "choices": [
+      "\"Did you create the company by yourself?\"",
+      "\"Did you win the Putnam?\"",
+      "\"Did you join ICPC?\"",
+      "\"Did you got Pulitzer Prize?\"",
+      "\"Did you invent this algorithm?\""
+    ],
+    "correctChoice": "\"Did you win the Putnam?\"",
+    "explanation": "https://news.ycombinator.com/item?id=35079"
+  }
+]
