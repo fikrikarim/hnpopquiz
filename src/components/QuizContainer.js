@@ -24,24 +24,45 @@ function QuizContainer() {
   const selectAnswer = ({ id, answer }) => {
     setAnswers(prevAnswers => ({
       ...prevAnswers,
-      [id]: answer
+      [id]: {
+        answer
+      }
     }));
     nextSlide();
   };
 
-  const calculateScore = () => {
-    let correctAnswer = 0;
-    quizList.forEach(quiz => {
-      if (answers[quiz.id] === quiz.correctChoice) {
-        correctAnswer++;
+  const checkAnswers = () => {
+    let checkedAnswers = {};
+
+    for (let id in answers) {
+      const answer = answers[id].answer;
+      const isCorrect =
+        quizList.find(quiz => quiz.id === id).correctChoice === answer;
+
+      checkedAnswers[id] = {
+        answer,
+        isCorrect
+      };
+    }
+
+    calculateScore(checkedAnswers);
+    setAnswers(checkedAnswers);
+  };
+
+  const calculateScore = checkedAnswers => {
+    let totalScore = 0;
+
+    Object.values(checkedAnswers).forEach(answer => {
+      if (answer.isCorrect) {
+        totalScore++;
       }
     });
 
-    setScore(correctAnswer);
+    setScore(totalScore);
   };
 
   const submitAnswer = () => {
-    calculateScore();
+    checkAnswers();
     setIsAnswersSubmitted(true);
     setisLoading(true);
 
@@ -60,7 +81,10 @@ function QuizContainer() {
         {dots.map(dot => {
           return React.cloneElement(dot, {
             className: classNames(dot.props.className, {
-              "dot-answered": answers[dot.key]
+              "dot-answered": answers[dot.key] && !isAnswersSubmitted,
+              "dot-correct": answers[dot.key] && answers[dot.key].isCorrect,
+              "dot-wrong":
+                answers[dot.key] && answers[dot.key].isCorrect === false
             })
           });
         })}
@@ -78,23 +102,15 @@ function QuizContainer() {
         <SlideLanding onClick={nextSlide} />
       )}
 
-      {isAnswersSubmitted
-        ? quizList.map(quiz => (
-            <SlideQuestion
-              quiz={quiz}
-              key={quiz.id}
-              answers={answers}
-              selectAnswer={selectAnswer}
-            />
-          ))
-        : quizList.map(quiz => (
-            <SlideQuestion
-              quiz={quiz}
-              key={quiz.id}
-              answers={answers}
-              selectAnswer={selectAnswer}
-            />
-          ))}
+      {quizList.map(quiz => (
+        <SlideQuestion
+          quiz={quiz}
+          key={quiz.id}
+          answers={answers}
+          selectAnswer={selectAnswer}
+          isAnswersSubmitted={isAnswersSubmitted}
+        />
+      ))}
 
       {isAnswersSubmitted ? (
         <SlideLast />

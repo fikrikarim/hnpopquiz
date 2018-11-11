@@ -42,12 +42,32 @@ body,
   &-selected {
     color: orange;
   }
+
+  &-correct {
+    color: green;
+  }
+
+  &-wrong {
+    color: red;
+  }
 }
 
 .dot {
   &-answered {
     ::before {
       color: orange !important;
+    }
+  }
+
+  &-correct {
+    ::before {
+      color: green !important;
+    }
+  }
+
+  &-wrong {
+    ::before {
+      color: red !important;
     }
   }
 }
