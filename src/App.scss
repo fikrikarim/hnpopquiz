@@ -37,3 +37,17 @@ body,
     text-align: center;
   }
 }
+
+.answer {
+  &-selected {
+    color: orange;
+  }
+}
+
+.dot {
+  &-answered {
+    ::before {
+      color: orange !important;
+    }
+  }
+}

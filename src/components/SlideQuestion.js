@@ -1,7 +1,8 @@
 import React from "react";
+import classNames from "classnames";
 
 export default function SlideQuestion(props) {
-  const { quiz, selectAnswer } = props;
+  const { quiz, selectAnswer, answers } = props;
   const { id, question, choices } = quiz;
 
   return (
@@ -10,7 +11,12 @@ export default function SlideQuestion(props) {
 
       <ul>
         {choices.map(choice => (
-          <li key={choice}>
+          <li
+            key={choice}
+            className={classNames({
+              "answer-selected": answers[id] === choice
+            })}
+          >
             <button
               onClick={() =>
                 selectAnswer({

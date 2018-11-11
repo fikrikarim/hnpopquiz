@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Slider from "react-slick";
+import classNames from "classnames";
 import SlideLanding from "./SlideLanding";
 import SlideScore from "./SlideScore";
 import SlideQuestion from "./SlideQuestion";
@@ -52,7 +53,19 @@ function QuizContainer() {
   var sliderSettings = {
     dots: true,
     infinite: false,
-    arrows: false
+    arrows: false,
+
+    appendDots: dots => (
+      <ul>
+        {dots.map(dot => {
+          return React.cloneElement(dot, {
+            className: classNames(dot.props.className, {
+              "dot-answered": answers[dot.key]
+            })
+          });
+        })}
+      </ul>
+    )
   };
 
   return isLoading ? (
@@ -70,6 +83,7 @@ function QuizContainer() {
             <SlideQuestion
               quiz={quiz}
               key={quiz.id}
+              answers={answers}
               selectAnswer={selectAnswer}
             />
           ))
@@ -77,6 +91,7 @@ function QuizContainer() {
             <SlideQuestion
               quiz={quiz}
               key={quiz.id}
+              answers={answers}
               selectAnswer={selectAnswer}
             />
           ))}
