@@ -6,7 +6,7 @@ import SlideScore from "./SlideScore";
 import SlideQuestion from "./SlideQuestion";
 import SlideSubmitAnswer from "./SlideSubmitAnswer";
 import SlideLast from "./SlideLast";
-import PageLoading from "./PageLoading";
+import SlideLoading from "./SlideLoading";
 import quizList from "../quizList.json";
 
 function QuizContainer() {
@@ -93,7 +93,7 @@ function QuizContainer() {
   };
 
   return isLoading ? (
-    <PageLoading />
+    <SlideLoading />
   ) : (
     <Slider ref={slider} {...sliderSettings}>
       {isAnswersSubmitted ? (
