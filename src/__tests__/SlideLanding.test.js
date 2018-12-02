@@ -22,7 +22,7 @@ describe("<SlideLanding />", () => {
     expect(wrapper.find("h2").length).toEqual(1);
   });
 
-  describe("when button is clicked", () => {
+  describe("when the button is clicked", () => {
     it("calls the onClick props", () => {
       const onClick = jest.fn();
       const wrapper = shallow(<SlideLanding onClick={onClick} />);

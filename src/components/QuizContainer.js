@@ -97,7 +97,7 @@ function QuizContainer() {
   ) : (
     <Slider ref={slider} {...sliderSettings}>
       {isAnswersSubmitted ? (
-        <SlideScore score={score} onClick={nextSlide} />
+        <SlideScore score={score} onClickShowAnswer={nextSlide} />
       ) : (
         <SlideLanding onClick={nextSlide} />
       )}

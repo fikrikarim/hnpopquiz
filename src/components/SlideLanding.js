@@ -2,6 +2,7 @@ import React from "react";
 
 export default function SlideLanding(props) {
   const { onClick } = props;
+
   return (
     <div className="slide slide-landing">
       <h1>HN Pop Quiz</h1>
