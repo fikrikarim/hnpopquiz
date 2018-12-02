@@ -13,6 +13,6 @@ describe("<SlideLoading />", () => {
   it("renders a 'h1'", () => {
     const wrapper = shallow(<SlideLoading />);
 
-    expect(wrapper.find("h1").length).toEqual(1);
+    expect(wrapper.find("h1").exists()).toBeTruthy();
   });
 });

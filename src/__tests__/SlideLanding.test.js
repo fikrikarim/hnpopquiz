@@ -13,13 +13,13 @@ describe("<SlideLanding />", () => {
   it("renders a 'h1'", () => {
     const wrapper = shallow(<SlideLanding />);
 
-    expect(wrapper.find("h1").length).toEqual(1);
+    expect(wrapper.find("h1").exists()).toBeTruthy();
   });
 
   it("renders a 'h2'", () => {
     const wrapper = shallow(<SlideLanding />);
 
-    expect(wrapper.find("h2").length).toEqual(1);
+    expect(wrapper.find("h2").exists()).toBeTruthy();
   });
 
   describe("when the button is clicked", () => {

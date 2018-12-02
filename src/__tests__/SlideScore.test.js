@@ -13,7 +13,7 @@ describe("<SlideScore />", () => {
   it("renders a 'h1'", () => {
     const wrapper = shallow(<SlideScore />);
 
-    expect(wrapper.find("h1").length).toEqual(1);
+    expect(wrapper.find("h1").exists()).toBeTruthy();
   });
 
   it("renders the score", () => {

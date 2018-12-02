@@ -11,7 +11,7 @@ describe("<SlideQuestion />", () => {
   });
 
   it("renders the question", () => {
-    const question = "How you doin' bro?";
+    const question = "How you doin'?";
     const wrapper = shallow(
       <SlideQuestion quiz={{ question }} userAnswers={{}} />
     );
