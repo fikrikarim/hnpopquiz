@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 export default function SlideQuestion(props) {
-  const { quiz, selectAnswer, answers, isAnswersSubmitted } = props;
+  const { quiz, selectAnswer, userAnswers, isAnswersSubmitted } = props;
   const { id, question, choices, correctChoice, explanation } = quiz;
 
   const handleOnClick = choice => {
@@ -14,7 +14,8 @@ export default function SlideQuestion(props) {
   };
 
   const choiceClassNames = choice => {
-    const isSelectedAnswer = answers[id] && answers[id].answer === choice;
+    const isSelectedAnswer =
+      userAnswers[id] && userAnswers[id].answer === choice;
     const isCorrectAnswer = choice === correctChoice;
     const isWrongAnswer = isSelectedAnswer && !isCorrectAnswer;
 

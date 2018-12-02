@@ -5,21 +5,25 @@ import SlideQuestion from "../components/SlideQuestion";
 
 describe("<SlideQuestion />", () => {
   it("renders with class 'slide-question'", () => {
-    const wrapper = shallow(<SlideQuestion quiz={{}} answers={{}} />);
+    const wrapper = shallow(<SlideQuestion quiz={{}} userAnswers={{}} />);
 
     expect(wrapper.hasClass("slide-question")).toBeTruthy();
   });
 
   it("renders the question", () => {
     const question = "How you doin' bro?";
-    const wrapper = shallow(<SlideQuestion quiz={{ question }} answers={{}} />);
+    const wrapper = shallow(
+      <SlideQuestion quiz={{ question }} userAnswers={{}} />
+    );
 
     expect(wrapper.find(".question").contains(question)).toBeTruthy();
   });
 
   it("renders each choices", () => {
     const choices = ["I'm good", "I've just got flu"];
-    const wrapper = shallow(<SlideQuestion quiz={{ choices }} answers={{}} />);
+    const wrapper = shallow(
+      <SlideQuestion quiz={{ choices }} userAnswers={{}} />
+    );
 
     expect(wrapper.find("li").length).toEqual(2);
     expect(wrapper.find(".choice-container").contains(choices[0])).toBeTruthy();
@@ -29,7 +33,7 @@ describe("<SlideQuestion />", () => {
   describe("when user has NOT submitted the answer", () => {
     it("does NOT render the explanation", () => {
       const wrapper = shallow(
-        <SlideQuestion isAnswersSubmitted={false} quiz={{}} answers={{}} />
+        <SlideQuestion isAnswersSubmitted={false} quiz={{}} userAnswers={{}} />
       );
 
       expect(wrapper.find(".explanation").length).toEqual(0);
@@ -41,7 +45,7 @@ describe("<SlideQuestion />", () => {
         <SlideQuestion
           isAnswersSubmitted={false}
           quiz={{ id: "1", choices: ["I'm good"] }}
-          answers={{}}
+          userAnswers={{}}
           selectAnswer={selectAnswer}
         />
       );
@@ -52,12 +56,12 @@ describe("<SlideQuestion />", () => {
     });
 
     it("choice has 'answer-selected' class when it is selected", () => {
-      const answers = { "1": { answer: "I'm good" } };
+      const userAnswers = { "1": { answer: "I'm good" } };
       const wrapper = shallow(
         <SlideQuestion
           isAnswersSubmitted={false}
           quiz={{ id: "1", choices: ["I'm good"] }}
-          answers={answers}
+          userAnswers={userAnswers}
         />
       );
 
@@ -65,7 +69,7 @@ describe("<SlideQuestion />", () => {
     });
 
     it("choice does NOT have 'answer-correct' class when it is correct", () => {
-      const answers = { "1": { answer: "I'm good" } };
+      const userAnswers = { "1": { answer: "I'm good" } };
       const quiz = {
         id: "1",
         choices: ["I'm good"],
@@ -75,7 +79,7 @@ describe("<SlideQuestion />", () => {
         <SlideQuestion
           isAnswersSubmitted={false}
           quiz={quiz}
-          answers={answers}
+          userAnswers={userAnswers}
         />
       );
 
@@ -83,7 +87,7 @@ describe("<SlideQuestion />", () => {
     });
 
     it("choice does NOT have 'answer-wrong' class when it is wrong", () => {
-      const answers = { "1": { answer: "I'm good" } };
+      const userAnswers = { "1": { answer: "I'm good" } };
       const quiz = {
         id: "1",
         choices: ["I'm good"],
@@ -93,7 +97,7 @@ describe("<SlideQuestion />", () => {
         <SlideQuestion
           isAnswersSubmitted={false}
           quiz={quiz}
-          answers={answers}
+          userAnswers={userAnswers}
         />
       );
 
@@ -108,7 +112,7 @@ describe("<SlideQuestion />", () => {
         <SlideQuestion
           isAnswersSubmitted={true}
           quiz={{ explanation }}
-          answers={{}}
+          userAnswers={{}}
         />
       );
 
@@ -121,7 +125,7 @@ describe("<SlideQuestion />", () => {
         <SlideQuestion
           isAnswersSubmitted={false}
           quiz={{ choices: ["I'm good"] }}
-          answers={{}}
+          userAnswers={{}}
           selectAnswer={selectAnswer}
         />
       );
@@ -132,12 +136,12 @@ describe("<SlideQuestion />", () => {
     });
 
     it("choice has 'answer-selected' class when it is selected", () => {
-      const answers = { "1": { answer: "I'm good" } };
+      const userAnswers = { "1": { answer: "I'm good" } };
       const wrapper = shallow(
         <SlideQuestion
           isAnswersSubmitted={true}
           quiz={{ id: "1", choices: ["I'm good"] }}
-          answers={answers}
+          userAnswers={userAnswers}
         />
       );
 
@@ -145,7 +149,7 @@ describe("<SlideQuestion />", () => {
     });
 
     it("choice has 'answer-correct' class when it is correct", () => {
-      const answers = { "1": { answer: "I'm good" } };
+      const userAnswers = { "1": { answer: "I'm good" } };
       const quiz = {
         id: "1",
         choices: ["I'm good"],
@@ -155,7 +159,7 @@ describe("<SlideQuestion />", () => {
         <SlideQuestion
           isAnswersSubmitted={true}
           quiz={quiz}
-          answers={answers}
+          userAnswers={userAnswers}
         />
       );
 
@@ -163,7 +167,7 @@ describe("<SlideQuestion />", () => {
     });
 
     it("choice has 'answer-wrong' class when it is wrong", () => {
-      const answers = { "1": { answer: "I'm good" } };
+      const userAnswers = { "1": { answer: "I'm good" } };
       const quiz = {
         id: "1",
         choices: ["I'm good"],
@@ -173,7 +177,7 @@ describe("<SlideQuestion />", () => {
         <SlideQuestion
           isAnswersSubmitted={true}
           quiz={quiz}
-          answers={answers}
+          userAnswers={userAnswers}
         />
       );
 

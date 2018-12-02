@@ -10,7 +10,7 @@ import SlideLoading from "./SlideLoading";
 import quizList from "../quizList.json";
 
 function QuizContainer() {
-  const [answers, setAnswers] = useState({});
+  const [userAnswers, setUserAnswers] = useState({});
   const [score, setScore] = useState(0);
   const [isAnswersSubmitted, setIsAnswersSubmitted] = useState(false);
   const [isLoading, setisLoading] = useState(false);
@@ -22,7 +22,7 @@ function QuizContainer() {
   };
 
   const selectAnswer = ({ id, answer }) => {
-    setAnswers(prevAnswers => ({
+    setUserAnswers(prevAnswers => ({
       ...prevAnswers,
       [id]: {
         answer
@@ -34,8 +34,8 @@ function QuizContainer() {
   const checkAnswers = () => {
     let checkedAnswers = {};
 
-    for (let id in answers) {
-      const answer = answers[id].answer;
+    for (let id in userAnswers) {
+      const answer = userAnswers[id].answer;
       const isCorrect =
         quizList.find(quiz => quiz.id === id).correctChoice === answer;
 
@@ -46,7 +46,7 @@ function QuizContainer() {
     }
 
     calculateScore(checkedAnswers);
-    setAnswers(checkedAnswers);
+    setUserAnswers(checkedAnswers);
   };
 
   const calculateScore = checkedAnswers => {
@@ -81,10 +81,11 @@ function QuizContainer() {
         {dots.map(dot => {
           return React.cloneElement(dot, {
             className: classNames(dot.props.className, {
-              "dot-answered": answers[dot.key] && !isAnswersSubmitted,
-              "dot-correct": answers[dot.key] && answers[dot.key].isCorrect,
+              "dot-answered": userAnswers[dot.key] && !isAnswersSubmitted,
+              "dot-correct":
+                userAnswers[dot.key] && userAnswers[dot.key].isCorrect,
               "dot-wrong":
-                answers[dot.key] && answers[dot.key].isCorrect === false
+                userAnswers[dot.key] && userAnswers[dot.key].isCorrect === false
             })
           });
         })}
@@ -106,7 +107,7 @@ function QuizContainer() {
         <SlideQuestion
           quiz={quiz}
           key={quiz.id}
-          answers={answers}
+          userAnswers={userAnswers}
           selectAnswer={selectAnswer}
           isAnswersSubmitted={isAnswersSubmitted}
         />
