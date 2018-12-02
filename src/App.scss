@@ -38,6 +38,16 @@ body,
   }
 }
 
+.choice {
+  &-container {
+    list-style: none;
+  }
+
+  &-single {
+    color: black;
+  }
+}
+
 .answer {
   &-selected {
     color: orange;
@@ -70,4 +80,8 @@ body,
       color: red !important;
     }
   }
+}
+
+.pure-button {
+  // color: red;
 }
