@@ -12,13 +12,13 @@ import SlideLast from "../components/SlideLast";
 import SlideLoading from "../components/SlideLoading";
 
 describe("<App />", () => {
-  xit("renders without crashing", () => {
+  it("renders without crashing", () => {
     const wrapper = mount(<App />);
 
     expect(wrapper).toBeTruthy();
   });
 
-  xdescribe("initial state", () => {
+  describe("initial state", () => {
     it("renders SlideLanding", () => {
       const wrapper = mount(<App />);
 
@@ -51,9 +51,9 @@ describe("<App />", () => {
   });
 
   describe("when user has submit the answers", () => {
+    jest.useFakeTimers();
     it("renders SlideLoading only on timers", () => {
       const wrapper = mount(<App />);
-      jest.useFakeTimers();
 
       wrapper
         .find(SlideSubmitAnswer)
@@ -61,14 +61,13 @@ describe("<App />", () => {
         .simulate("click");
 
       expect(wrapper.find(SlideLoading).exists()).toBeTruthy();
-      jest.runAllTimers();
+      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
       jest.advanceTimersByTime(3000);
-      expect(wrapper.find(SlideScore).exists()).toBeTruthy();
+      wrapper.update();
       expect(wrapper.find(SlideLoading).exists()).toBeFalsy();
     });
 
-    xit("renders loading for 3 seconds", () => {
-      jest.useFakeTimers();
+    it("renders SlideScore", () => {
       const wrapper = mount(<App />);
 
       wrapper
@@ -76,19 +75,8 @@ describe("<App />", () => {
         .find("button")
         .simulate("click");
 
-      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
-    });
-
-    xit("renders SlideScore", () => {
-      jest.useFakeTimers();
-      const wrapper = mount(<App />);
-
-      wrapper
-        .find(SlideSubmitAnswer)
-        .find("button")
-        .simulate("click");
-
-      jest.runAllTimers();
+      jest.advanceTimersByTime(3000);
+      wrapper.update();
       expect(wrapper.find(SlideScore).exists()).toBeTruthy();
     });
   });
