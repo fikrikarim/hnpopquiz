@@ -1,0 +1,183 @@
+import React from "react";
+import { shallow } from "enzyme";
+
+import SlideQuestion from "../components/SlideQuestion";
+
+describe("<SlideQuestion />", () => {
+  it("renders with class 'slide-question'", () => {
+    const wrapper = shallow(<SlideQuestion quiz={{}} answers={{}} />);
+
+    expect(wrapper.hasClass("slide-question")).toBeTruthy();
+  });
+
+  it("renders the question", () => {
+    const question = "How you doin' bro?";
+    const wrapper = shallow(<SlideQuestion quiz={{ question }} answers={{}} />);
+
+    expect(wrapper.find(".question").contains(question)).toBeTruthy();
+  });
+
+  it("renders each choices", () => {
+    const choices = ["I'm good", "I've just got flu"];
+    const wrapper = shallow(<SlideQuestion quiz={{ choices }} answers={{}} />);
+
+    expect(wrapper.find("li").length).toEqual(2);
+    expect(wrapper.find(".choice-container").contains(choices[0])).toBeTruthy();
+    expect(wrapper.find(".choice-container").contains(choices[1])).toBeTruthy();
+  });
+
+  describe("when user has NOT submitted the answer", () => {
+    it("does NOT render the explanation", () => {
+      const wrapper = shallow(
+        <SlideQuestion isAnswersSubmitted={false} quiz={{}} answers={{}} />
+      );
+
+      expect(wrapper.find(".explanation").length).toEqual(0);
+    });
+
+    it("calls selectAnswer prop when an answer is clicked", () => {
+      const selectAnswer = jest.fn();
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={false}
+          quiz={{ id: "1", choices: ["I'm good"] }}
+          answers={{}}
+          selectAnswer={selectAnswer}
+        />
+      );
+
+      wrapper.find("button").simulate("click");
+
+      expect(selectAnswer).toBeCalledWith({ id: "1", answer: "I'm good" });
+    });
+
+    it("choice has 'answer-selected' class when it is selected", () => {
+      const answers = { "1": { answer: "I'm good" } };
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={false}
+          quiz={{ id: "1", choices: ["I'm good"] }}
+          answers={answers}
+        />
+      );
+
+      expect(wrapper.find("li").hasClass("answer-selected")).toBeTruthy();
+    });
+
+    it("choice does NOT have 'answer-correct' class when it is correct", () => {
+      const answers = { "1": { answer: "I'm good" } };
+      const quiz = {
+        id: "1",
+        choices: ["I'm good"],
+        correctChoice: "I'm good"
+      };
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={false}
+          quiz={quiz}
+          answers={answers}
+        />
+      );
+
+      expect(wrapper.find("li").hasClass("answer-correct")).toBeFalsy();
+    });
+
+    it("choice does NOT have 'answer-wrong' class when it is wrong", () => {
+      const answers = { "1": { answer: "I'm good" } };
+      const quiz = {
+        id: "1",
+        choices: ["I'm good"],
+        correctChoice: "I've just got flu"
+      };
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={false}
+          quiz={quiz}
+          answers={answers}
+        />
+      );
+
+      expect(wrapper.find("li").hasClass("answer-wrong")).toBeFalsy();
+    });
+  });
+
+  describe("when user has submitted the answer", () => {
+    it("renders the explanation", () => {
+      const explanation = "Because that's the correct answer";
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={true}
+          quiz={{ explanation }}
+          answers={{}}
+        />
+      );
+
+      expect(wrapper.find(".explanation").text()).toEqual(explanation);
+    });
+
+    it("does NOT call selectAnswer prop when an answer is clicked", () => {
+      const selectAnswer = jest.fn();
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={false}
+          quiz={{ choices: ["I'm good"] }}
+          answers={{}}
+          selectAnswer={selectAnswer}
+        />
+      );
+
+      wrapper.find("button").simulate("click");
+
+      expect(selectAnswer).toBeCalled();
+    });
+
+    it("choice has 'answer-selected' class when it is selected", () => {
+      const answers = { "1": { answer: "I'm good" } };
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={true}
+          quiz={{ id: "1", choices: ["I'm good"] }}
+          answers={answers}
+        />
+      );
+
+      expect(wrapper.find("li").hasClass("answer-selected")).toBeFalsy();
+    });
+
+    it("choice has 'answer-correct' class when it is correct", () => {
+      const answers = { "1": { answer: "I'm good" } };
+      const quiz = {
+        id: "1",
+        choices: ["I'm good"],
+        correctChoice: "I'm good"
+      };
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={true}
+          quiz={quiz}
+          answers={answers}
+        />
+      );
+
+      expect(wrapper.find("li").hasClass("answer-correct")).toBeTruthy();
+    });
+
+    it("choice has 'answer-wrong' class when it is wrong", () => {
+      const answers = { "1": { answer: "I'm good" } };
+      const quiz = {
+        id: "1",
+        choices: ["I'm good"],
+        correctChoice: "I've just got flu"
+      };
+      const wrapper = shallow(
+        <SlideQuestion
+          isAnswersSubmitted={true}
+          quiz={quiz}
+          answers={answers}
+        />
+      );
+
+      expect(wrapper.find("li").hasClass("answer-wrong")).toBeTruthy();
+    });
+  });
+});

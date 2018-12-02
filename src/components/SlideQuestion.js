@@ -13,6 +13,18 @@ export default function SlideQuestion(props) {
       });
   };
 
+  const choiceClassNames = choice => {
+    const isSelectedAnswer = answers[id] && answers[id].answer === choice;
+    const isCorrectAnswer = choice === correctChoice;
+    const isWrongAnswer = isSelectedAnswer && !isCorrectAnswer;
+
+    return {
+      "answer-selected": isSelectedAnswer && !isAnswersSubmitted,
+      "answer-correct": isCorrectAnswer && isAnswersSubmitted,
+      "answer-wrong": isWrongAnswer && isAnswersSubmitted
+    };
+  };
+
   return (
     <div className="slide slide-question">
       <div className="question">
@@ -20,28 +32,21 @@ export default function SlideQuestion(props) {
       </div>
 
       <ul className="choice-container">
-        {choices.map(choice => {
-          const isSelectedAnswer = answers[id] && answers[id].answer === choice;
-          const isCorrectAnswer = choice === correctChoice;
-          const isWrongAnswer = isSelectedAnswer && !isCorrectAnswer;
-
-          return (
-            <li
-              key={choice}
-              className={classNames("choice-single", {
-                "answer-selected": isSelectedAnswer && !isAnswersSubmitted,
-                "answer-correct": isCorrectAnswer && isAnswersSubmitted,
-                "answer-wrong": isWrongAnswer && isAnswersSubmitted
-              })}
-            >
-              <button onClick={() => handleOnClick(choice)}>{choice}</button>
-            </li>
-          );
-        })}
+        {choices &&
+          choices.map(choice => {
+            return (
+              <li
+                key={choice}
+                className={classNames("choice-item", choiceClassNames(choice))}
+              >
+                <button onClick={() => handleOnClick(choice)}>{choice}</button>
+              </li>
+            );
+          })}
       </ul>
 
       {isAnswersSubmitted && (
-        <div>
+        <div className="explanation">
           <p>{explanation}</p>
         </div>
       )}
