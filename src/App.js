@@ -71,26 +71,27 @@ function App() {
     }, loadingDuration);
   };
 
+  const appendDots = dots => (
+    <ul>
+      {dots.map(dot => {
+        return React.cloneElement(dot, {
+          className: classNames(dot.props.className, {
+            "dot-answered": userAnswers[dot.key] && !isAnswersSubmitted,
+            "dot-correct":
+              userAnswers[dot.key] && userAnswers[dot.key].isCorrect,
+            "dot-wrong":
+              userAnswers[dot.key] && userAnswers[dot.key].isCorrect === false
+          })
+        });
+      })}
+    </ul>
+  );
+
   var sliderSettings = {
     dots: true,
     infinite: false,
     arrows: false,
-
-    appendDots: dots => (
-      <ul>
-        {dots.map(dot => {
-          return React.cloneElement(dot, {
-            className: classNames(dot.props.className, {
-              "dot-answered": userAnswers[dot.key] && !isAnswersSubmitted,
-              "dot-correct":
-                userAnswers[dot.key] && userAnswers[dot.key].isCorrect,
-              "dot-wrong":
-                userAnswers[dot.key] && userAnswers[dot.key].isCorrect === false
-            })
-          });
-        })}
-      </ul>
-    )
+    appendDots
   };
 
   return isLoading ? (
