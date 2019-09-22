@@ -10,28 +10,28 @@
       "Chris Paul"
     ],
     "correctChoice": "Paul Graham",
-    "explanation": "<a href='https://en.wikipedia.org/wiki/Hacker_News' target='__blank'>If you answer this question wrong, welcome to HN!</a>"
+    "explanation": "<a href='https://en.wikipedia.org/wiki/Hacker_News' target='_blank'>If you answer this question wrong, welcome to HN!</a>"
   },
   {
     "id": "2",
     "question": "What company did Show HN on Hacker news, but got some pessimistic comments, including, \"you can already build such a system yourself quite trivially\"?",
     "choices": ["Airbnb", "Box", "Coinbase", "Dropbox", "Firebase"],
     "correctChoice": "Dropbox",
-    "explanation": "<a href='https://news.ycombinator.com/item?id=8863' target='__blank'>The infamous Dropbox Show HN page</a>"
+    "explanation": "<a href='https://news.ycombinator.com/item?id=8863' target='_blank'>The infamous Dropbox Show HN page</a>"
   },
   {
     "id": "3",
     "question": "How many karma you need to be able to downvote other comments?",
     "choices": ["1", "31", "251", "501", "You can downvote comments?"],
     "correctChoice": "501",
-    "explanation": "<a href='https://github.com/minimaxir/hacker-news-undocumented#downvoting-comments' target='__blank'>One of Hacker News's Undocumented Features</a>"
+    "explanation": "<a href='https://github.com/minimaxir/hacker-news-undocumented#downvoting-comments' target='_blank'>One of Hacker News's undocumented feature</a>"
   },
   {
     "id": "4",
-    "question": "What is the username of one (or more) of our moderator(s)?",
+    "question": "What is the username of one of our moderators?",
     "choices": ["dang", "ding", "spez", "momod", "All of the above"],
     "correctChoice": "dang",
-    "explanation": "<a href='https://www.newyorker.com/news/letter-from-silicon-valley/the-lonely-work-of-moderating-hacker-news' target='__blank'>A very cool and detailed article from Newyorker about Hacker News</a>"
+    "explanation": "<a href='https://www.newyorker.com/news/letter-from-silicon-valley/the-lonely-work-of-moderating-hacker-news' target='_blank'>A very cool and detailed article from Newyorker about HN behind the scene</a>"
   },
   {
     "id": "5",
@@ -44,14 +44,14 @@
       "None of the above"
     ],
     "correctChoice": "Alan Kay",
-    "explanation": "<a href='https://news.ycombinator.com/item?id=11939851' target='__blank'>I heard Alan Kay first from HN :D</a>"
+    "explanation": "<a href='https://news.ycombinator.com/item?id=11939851' target='_blank'>AMA page</a>"
   },
   {
     "id": "6",
     "question": "Which of the following username isn't included in top 5 users with most karma?",
     "choices": ["tptacek", "jacquesm", "patio11", "danso", "sctb"],
     "correctChoice": "sctb",
-    "explanation": "https://news.ycombinator.com/leaders"
+    "explanation": "<a href='https://news.ycombinator.com/leaders' target='_blank'>Leaderboards of imaginary internet points</a>"
   },
   {
     "id": "7",
@@ -64,14 +64,14 @@
       "daringfireball"
     ],
     "correctChoice": "n-gate",
-    "explanation": "http://n-gate.com/"
+    "explanation": "<a href='http://n-gate.com/' target='_blank'>One way of avoiding an echo chamber</a>"
   },
   {
     "id": "8",
     "question": "The original hacker news program is written in what programming language?",
     "choices": ["Arc", "Basic", "Clojure", "Delphi", "Typescript"],
     "correctChoice": "Arc",
-    "explanation": "http://paulgraham.com/hackernews.html"
+    "explanation": "<a href='http://paulgraham.com/hackernews.html' target='_blank'>It is what it used to be</a>"
   },
   {
     "id": "9",
@@ -81,10 +81,10 @@
       "Steve Jobs has passed away.",
       "Stephen Hawking has died",
       "Reflecting on one very, very strange year at Uber",
-      "Show HN: HN Pop Quiz - How much do you know about HN?"
+      "Show HN: HN Pop Quiz - Useless Trivia Quiz about HN"
     ],
     "correctChoice": "Stephen Hawking has died",
-    "explanation": "I really hope I can update this answer"
+    "explanation": "<a href='https://hn.algolia.com/' target='_blank'>I wish I can update the correct answer</a>"
   },
   {
     "id": "10",
@@ -97,6 +97,6 @@
       "\"Did you invent this algorithm?\""
     ],
     "correctChoice": "\"Did you win the Putnam?\"",
-    "explanation": "https://news.ycombinator.com/item?id=35079"
+    "explanation": "<a href='https://news.ycombinator.com/item?id=35079' target='_blank'>Sorry if the question is too trivial, it's for the bell curve :)</a>"
   }
 ]
