@@ -49,7 +49,7 @@ export default function SlideQuestion(props) {
 
       {isAnswersSubmitted && (
         <div className="explanation">
-          <p>{explanation}</p>
+          <p dangerouslySetInnerHTML={{ __html: explanation }} />
         </div>
       )}
     </div>

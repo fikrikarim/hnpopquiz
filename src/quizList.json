@@ -10,28 +10,28 @@
       "Chris Paul"
     ],
     "correctChoice": "Paul Graham",
-    "explanation": ""
+    "explanation": "<a href='https://en.wikipedia.org/wiki/Hacker_News' target='__blank'>If you answer this question wrong, welcome to HN!</a>"
   },
   {
     "id": "2",
     "question": "What company did Show HN on Hacker news, but got some pessimistic comments, including, \"you can already build such a system yourself quite trivially\"?",
     "choices": ["Airbnb", "Box", "Coinbase", "Dropbox", "Firebase"],
     "correctChoice": "Dropbox",
-    "explanation": "https://news.ycombinator.com/item?id=8863"
+    "explanation": "<a href='https://news.ycombinator.com/item?id=8863' target='__blank'>The infamous Dropbox Show HN page</a>"
   },
   {
     "id": "3",
     "question": "How many karma you need to be able to downvote other comments?",
     "choices": ["1", "31", "251", "501", "You can downvote comments?"],
     "correctChoice": "501",
-    "explanation": "https://github.com/minimaxir/hacker-news-undocumented#downvoting-comments"
+    "explanation": "<a href='https://github.com/minimaxir/hacker-news-undocumented#downvoting-comments' target='__blank'>One of Hacker News's Undocumented Features</a>"
   },
   {
     "id": "4",
     "question": "What is the username of one (or more) of our moderator(s)?",
     "choices": ["dang", "ding", "spez", "momod", "All of the above"],
     "correctChoice": "dang",
-    "explanation": ""
+    "explanation": "<a href='https://www.newyorker.com/news/letter-from-silicon-valley/the-lonely-work-of-moderating-hacker-news' target='__blank'>A very cool and detailed article from Newyorker about Hacker News</a>"
   },
   {
     "id": "5",
@@ -44,7 +44,7 @@
       "None of the above"
     ],
     "correctChoice": "Alan Kay",
-    "explanation": "https://news.ycombinator.com/item?id=11939851"
+    "explanation": "<a href='https://news.ycombinator.com/item?id=11939851' target='__blank'>I heard Alan Kay first from HN :D</a>"
   },
   {
     "id": "6",
