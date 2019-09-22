@@ -10,10 +10,10 @@ describe("<SlideSubmitAnswer />", () => {
     expect(wrapper.hasClass("slide-submit-answer")).toBeTruthy();
   });
 
-  it("renders a 'h1'", () => {
+  it("renders a 'h2'", () => {
     const wrapper = shallow(<SlideSubmitAnswer />);
 
-    expect(wrapper.find("h1").exists()).toBeTruthy();
+    expect(wrapper.find("h2").exists()).toBeTruthy();
   });
 
   describe("when the button is clicked", () => {

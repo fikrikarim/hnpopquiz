@@ -50,7 +50,7 @@ describe("<SlideQuestion />", () => {
         />
       );
 
-      wrapper.find("button").simulate("click");
+      wrapper.find("li").simulate("click");
 
       expect(selectAnswer).toBeCalledWith({ id: "1", answer: "I'm good" });
     });
@@ -130,7 +130,7 @@ describe("<SlideQuestion />", () => {
         />
       );
 
-      wrapper.find("button").simulate("click");
+      wrapper.find("li").simulate("click");
 
       expect(selectAnswer).toBeCalled();
     });

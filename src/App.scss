@@ -1,3 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+$black: #555;
+$darker-black: #333;
+$grey: #666;
+
+$primary: #ff6600;
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: $black;
+}
+
+h1,
+h2,
+strong {
+  color: $darker-black;
+}
+
 html,
 body,
 #root,
@@ -28,7 +47,7 @@ body,
 }
 
 .question {
-  margin: 0 40px;
+  margin: 0 2.5em;
 }
 
 .slide {
@@ -40,7 +59,7 @@ body,
 
   &-landing,
   &-submit-answer {
-    padding: 0 60px;
+    padding: 0 3.75em;
   }
 
   &-question {
@@ -53,14 +72,14 @@ body,
   }
 
   &-item {
-    margin-bottom: 12px;
-    color: black;
+    margin-bottom: 1.5em;
+    color: $black;
   }
 }
 
 .answer {
   &-selected {
-    color: orange;
+    color: $primary;
   }
 
   &-correct {
@@ -75,7 +94,7 @@ body,
 .dot {
   &-answered {
     ::before {
-      color: orange !important;
+      color: $primary !important;
     }
   }
 
@@ -93,5 +112,7 @@ body,
 }
 
 .pure-button {
-  // color: red;
+  &-primary {
+    background-color: $primary;
+  }
 }

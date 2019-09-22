@@ -28,18 +28,7 @@ describe("<SlideScore />", () => {
       const onClick = jest.fn();
       const wrapper = shallow(<SlideScore onClickShowAnswer={onClick} />);
 
-      wrapper.find(".btn-show-answer").simulate("click");
-
-      expect(onClick).toBeCalled();
-    });
-  });
-
-  describe("when 'Try Again' button is clicked", () => {
-    it("calls the onClickShowAnswer props", () => {
-      const onClick = jest.fn();
-      const wrapper = shallow(<SlideScore onClickTryAgain={onClick} />);
-
-      wrapper.find(".btn-try-again").simulate("click");
+      wrapper.find("#showAnswer").simulate("click");
 
       expect(onClick).toBeCalled();
     });

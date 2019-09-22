@@ -5,9 +5,13 @@ export default function SlideSubmitAnswer(props) {
 
   return (
     <div className="slide slide-submit-answer">
-      <h1>Congratulation on finishing the quiz</h1>
+      <h2>You're done!</h2>
 
-      <button onClick={onClick}>Click here to submit your answer</button>
+      <br />
+
+      <button className="pure-button pure-button-primary" onClick={onClick}>
+        Submit your answer
+      </button>
     </div>
   );
 }
