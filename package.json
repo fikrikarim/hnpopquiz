@@ -20,7 +20,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://fikrikarim.github.io/hnpopquiz",
+  "homepage": ".",
   "eslintConfig": {
     "extends": "react-app"
   },
