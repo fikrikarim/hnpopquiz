@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animejs": "^3.1.0",
     "classnames": "^2.2.6",
     "node-sass": "^4.10.0",
     "purecss": "^1.0.0",

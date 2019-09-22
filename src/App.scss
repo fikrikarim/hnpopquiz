@@ -121,3 +121,13 @@ body,
     background-color: $primary;
   }
 }
+
+.slide-loading {
+  position: relative;
+
+  .loading-text {
+    position: absolute;
+    top: 40vh;
+    opacity: 0;
+  }
+}
