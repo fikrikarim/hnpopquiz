@@ -1,4 +1,5 @@
 import React from "react";
+import { act } from "react-dom/test-utils";
 // Cannot shallow render a component containing hooks
 // https://github.com/facebook/react/issues/14091
 import { mount } from "enzyme";
@@ -61,8 +62,10 @@ describe("<App />", () => {
         .simulate("click");
 
       expect(wrapper.find(SlideLoading).exists()).toBeTruthy();
-      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
-      jest.advanceTimersByTime(3000);
+      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 12000);
+      act(() => {
+        jest.advanceTimersByTime(12000);
+      });
       wrapper.update();
       expect(wrapper.find(SlideLoading).exists()).toBeFalsy();
     });
@@ -75,7 +78,9 @@ describe("<App />", () => {
         .find("button")
         .simulate("click");
 
-      jest.advanceTimersByTime(3000);
+      act(() => {
+        jest.advanceTimersByTime(12000);
+      });
       wrapper.update();
       expect(wrapper.find(SlideScore).exists()).toBeTruthy();
     });

@@ -7,10 +7,10 @@
     "classnames": "^2.2.6",
     "node-sass": "^4.10.0",
     "purecss": "^1.0.0",
-    "react": "^16.7.0-alpha",
-    "react-dom": "^16.7.0-alpha",
-    "react-scripts": "2.1.1",
-    "react-slick": "^0.23.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.2",
+    "react-slick": "^0.25.0",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
@@ -32,8 +32,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "gh-pages": "^2.0.1"
   }
 }

@@ -13,6 +13,7 @@ describe("<SlideLast />", () => {
   it("renders two 'h2'", () => {
     const wrapper = shallow(<SlideLast />);
 
-    expect(wrapper.find("h2").length).toEqual(2);
+    expect(wrapper.find("h2").length).toEqual(1);
+    expect(wrapper.find("h3").length).toEqual(1);
   });
 });
