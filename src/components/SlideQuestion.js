@@ -39,8 +39,9 @@ export default function SlideQuestion(props) {
               <li
                 key={choice}
                 className={classNames("choice-item", choiceClassNames(choice))}
+                onClick={() => handleOnClick(choice)}
               >
-                <button onClick={() => handleOnClick(choice)}>{choice}</button>
+                {choice}
               </li>
             );
           })}

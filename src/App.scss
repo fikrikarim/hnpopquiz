@@ -2,6 +2,8 @@ html,
 body,
 #root,
 #root > div {
+  margin: 0 auto;
+  max-width: 30em;
   height: 100%;
 }
 
@@ -25,16 +27,23 @@ body,
   }
 }
 
+.question {
+  margin: 0 40px;
+}
+
 .slide {
   display: flex !important;
   flex-direction: column;
   flex-grow: 1;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   &-landing,
   &-submit-answer {
-    text-align: center;
+    padding: 0 60px;
+  }
+
+  &-question {
   }
 }
 
@@ -44,6 +53,7 @@ body,
   }
 
   &-item {
+    margin-bottom: 12px;
     color: black;
   }
 }

@@ -8,7 +8,7 @@ export default function SlideLanding(props) {
       <h1>HN Pop Quiz</h1>
       <h2>How much do you know about unimportant things on HN?</h2>
 
-      <button className="pure-button" onClick={onClick}>
+      <button className="pure-button pure-button-primary" onClick={onClick}>
         Let's go
       </button>
     </div>
