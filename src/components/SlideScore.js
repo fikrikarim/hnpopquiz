@@ -19,7 +19,7 @@ export default function SlideScore(props) {
       <br />
       <br />
 
-      <h4>If you want to try again first, just refresh this page.</h4>
+      <h4>If you want to try again, just refresh this page.</h4>
     </div>
   );
 }

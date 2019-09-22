@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
-$black: #555;
+$black: #566b78;
 $darker-black: #333;
 $grey: #666;
 
@@ -46,8 +46,12 @@ body,
   }
 }
 
-.question {
+.question,
+.explanation {
   margin: 0 2.5em;
+}
+
+.explanation {
 }
 
 .slide {
@@ -56,13 +60,10 @@ body,
   flex-grow: 1;
   align-items: flex-start;
   justify-content: center;
-
-  &-landing,
-  &-submit-answer {
-    padding: 0 3.75em;
-  }
+  padding: 0 3.75em;
 
   &-question {
+    padding: 0;
   }
 }
 
